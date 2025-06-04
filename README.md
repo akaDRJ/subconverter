@@ -118,6 +118,15 @@ http://127.0.0.1:25500/sub?target=clash&url=https%3A%2F%2Fdler.cloud%2Fsubscribe
 Finally subscribe this link in Clash and you are done!
 ```
 
+## Running Tests
+
+Install pytest and run:
+
+```bash
+pip install pytest
+pytest
+```
+
 ---
 
 ## Advanced Usage
