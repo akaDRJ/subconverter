@@ -12,7 +12,22 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install dependencies
+        run: pip install pytest
+      - name: Run tests
+        run: pytest -q
+
   linux_build:
+    needs: tests
     strategy:
       matrix:
         include:
@@ -56,6 +71,7 @@ jobs:
           draft: true
 
   macos_build:
+    needs: tests
     strategy:
       matrix:
         include:
@@ -95,6 +111,7 @@ jobs:
           draft: true
 
   windows_build:
+    needs: tests
     strategy:
       matrix:
         include:
