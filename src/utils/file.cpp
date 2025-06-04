@@ -38,9 +38,12 @@ std::string fileGet(const std::string &path, bool scope_limit)
         content.assign(data, tot);
         delete[] data;
         */
-        content.resize(tot);
-        std::rewind(fp);
-        std::fread(&content[0], 1, tot, fp);
+        if(tot > 0)
+        {
+            content.resize(tot);
+            std::rewind(fp);
+            std::fread(&content[0], 1, tot, fp);
+        }
         std::fclose(fp);
     }
 
