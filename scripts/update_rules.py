@@ -27,7 +27,7 @@ def update_rules(repo_path: str, save_path: str, matches: list[str], keep_tree: 
     for pattern in matches:
         files = glob.glob(os.path.join(repo_path, pattern), recursive=True)
         if len(files) == 0:
-            logging.warn(f"no files found for pattern {pattern}")
+            logging.warning(f"no files found for pattern {pattern}")
             continue
         for file in files:
             if os.path.isdir(file):
