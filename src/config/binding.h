@@ -75,7 +75,7 @@ namespace toml
                     conf.EvaluateBeforeUse = find_or(v, "evaluate-before-use", conf.EvaluateBeforeUse.get());
                 break;
             default:
-                throw serialization_error(format_error("Proxy Group has unsupported type!", v.at("type").location(), "should be one of following: select, url-test, load-balance, fallback, relay, ssid"), v.at("type").location());
+                throw serialization_error(format_error("Proxy Group has unsupported type!", v.at("type").location(), "should be one of following: select, url-test, load-balance, fallback, relay, ssid, smart"), v.at("type").location());
             }
             conf.Timeout = find_or(v, "timeout", 5);
             conf.Proxies = find_or<StrArray>(v, "rule", {});

@@ -999,7 +999,7 @@ std::string surgeConfToClash(RESPONSE_CALLBACK_ARGS) {
         if (dummy_str_array.empty())
             continue;
         type = dummy_str_array[0];
-        if (!(type == "select" || type == "url-test" || type == "fallback" || type == "load-balance"))
+        if (!(type == "select" || type == "url-test" || type == "fallback" || type == "load-balance" || type == "smart"))
             //remove unsupported types
             continue;
         singlegroup["name"] = name;
