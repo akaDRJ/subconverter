@@ -35,7 +35,7 @@ class Context;
 class Value;
 
 /** Exception type.
- * Indicates that exception has occured in JS context.
+ * Indicates that exception has occurred in JS context.
  */
 class exception {
     JSContext * ctx;
